@@ -37,7 +37,7 @@ namespace Satisfunction
 
             if (string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret) || string.IsNullOrEmpty(tenantId) || string.IsNullOrEmpty(vmId))
             {
-                return new BadRequestResult();
+                return new StatusCodeResult(StatusCodes.Status501NotImplemented);
             }
 
             var credentials = SdkContext.AzureCredentialsFactory.FromServicePrincipal(clientId, clientSecret, tenantId, AzureEnvironment.AzureGlobalCloud);
